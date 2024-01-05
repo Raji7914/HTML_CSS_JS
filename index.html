@@ -1,0 +1,92 @@
+<html>
+    <head>
+        <style>
+           body {
+            margin: 40px;
+            border:black;
+            background-color: aquamarine ;
+           }
+           .button {
+                background-color: #444;
+                color: #fff;
+                border-radius: 50px;
+                padding: 20px;
+                font-size: 20px;
+                text-align: center;
+            }
+            .grid
+            {
+                display: grid;
+                justify-content: center;
+                grid-gap: 10px;
+                grid-template-columns: repeat(4,  150px ) ;
+                grid-template-rows: repeat(4,  auto  );
+                background-color: aquamarine;
+                color: #444;
+                padding: 10px;
+                                
+              }
+              h1 {
+               display: flex;
+               justify-content: center;
+               align-items: center;
+               padding: 5px;
+              }
+              .dis
+              {
+                display: flex;
+                justify-content: center;
+                align-items:center;
+                padding: 10px;
+              }
+              #result {
+                height: 50px ;
+                width: 40%;
+              }
+        </style>
+    </head>
+    <body>
+        <header>
+            
+                <h1>
+                    CALCULATOR APPLICATION
+                 </h1>
+        <div class="dis">    
+            <input type="text" id="result" size="50px" readonly>
+        </div>
+        </header>
+        <div class="grid">
+                <button class="button" id="button" onclick="display(1)">1</button>
+                <button class="button" id="button" onclick="display(2)">2</button>
+                <button class="button" id="button" onclick="display(3)">3</button>
+                <button class="button" id="button" onclick="display('/')">/</button>
+                <button class="button" id="button" onclick="display(4)">4</button>
+                <button class="button" id="button" onclick="display(5)">5</button>
+                <button class="button" id="button" onclick="display(6)">6</button>
+                <button class="button" id="button" onclick="display('*')">*</button>
+                <button class="button" id="button" onclick="display(7)">7</button>
+                <button class="button" id="button" onclick="display(8)">8</button>
+                <button class="button" id="button" onclick="display(9)">9</button>
+                <button class="button" id="button" onclick="display('+')">+</button>
+                <button class="button" id="button" onclick="display(0)">0</button>
+                <button class="button" id="button" onclick="display('.')">.</button>
+                <button class="button" id="button" onclick="display('-')">-</button>
+                <button class="button" id="button" onclick="result()">RESULT</button>
+            
+        </div>
+        <script>
+            var val;
+            
+            function display(val)
+            {
+                var a = document.getElementById("result").value += val;
+            }
+           function result()
+           {
+                var a = document.getElementById("result").value;
+                var b = eval(a);
+                document.getElementById("result").value = b;
+           }
+        </script>
+    </body>
+</html>
